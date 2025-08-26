@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  /* Removed background gradient for a plain background */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s;
+}
+
+.auth-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  text-align: center;
+  animation: fadeSlideIn 1s ease;
+}
+
+.auth-form h2 {
+  margin-bottom: 2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.auth-form form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  background-color: #f0f4ff;
+  transition: transform 0.2s;
+}
+
+.auth-form form input:focus {
+  outline: none;
+  transform: scale(1.05);
+  background-color: #e8f0fe;
+}
+
+.auth-form button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background: #6a11cb;
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.3s;
+}
+
+.auth-form button[type="submit"]:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.switch-auth {
+  margin-top: 1rem;
+  color: #555;
+}
+
+.switch-auth .switch-btn {
+  background: none;
+  border: none;
+  color: #6a11cb;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.switch-auth .switch-btn:hover {
+  color: #2575fc;
+}
+
+.message {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Removed clouds animation background */
+.clouds {
+  display: none;
+}
+.login-btn.rocket.fly {
+  animation: flyRocket 1s ease forwards;
+}
+
+@keyframes flyRocket {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  50% { transform: translateY(-150px) rotate(20deg); opacity: 1; }
+  100% { transform: translateY(-300px) rotate(45deg); opacity: 0; }
+}
+
+.avatar-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.avatar-animate {
+  animation: avatarBounce 1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes avatarBounce {
+  0%   { transform: scale(1) translateY(0); }
+  20%  { transform: scale(1.2, 0.8) translateY(-10px); }
+  40%  { transform: scale(0.9, 1.1) translateY(-20px); }
+  60%  { transform: scale(1.1, 0.9) translateY(-10px); }
+  80%  { transform: scale(0.95, 1.05) translateY(-5px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+.avatar-sparkle {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 1.5rem;
+  pointer-events: none;
+  animation: sparklePop 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes sparklePop {
+  0% { opacity: 0; transform: scale(0.2) rotate(-20deg); }
+  60% { opacity: 1; transform: scale(1.3) rotate(10deg); }
+  100% { opacity: 0; transform: scale(1) rotate(0deg); }
+}

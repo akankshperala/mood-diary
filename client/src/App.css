@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to top, #a0e9ff, #fff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+/* Auth Form Styling */
+.auth-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+  width: 300px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #66a6ff;
+  transform: scale(1.05);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #66a6ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.auth-form button:hover {
+  background: #89f7fe;
+  transform: scale(1.05);
+}
+
+.auth-form .message {
+  margin-top: 1rem;
+  text-align: center;
+  color: #e74c3c;
+}
+
+/* Fade-in animation for the auth form */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cloud animations */
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: cloudMove 60s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Individual cloud shapes */
+.cloud1 {
+  width: 120px;
+  height: 60px;
+  top: 50px;
+  left: -150px;
+}
+
+.cloud1::before {
+  width: 80px;
+  height: 80px;
+  top: -20px;
+  left: 40px;
+}
+
+.cloud1::after {
+  width: 60px;
+  height: 60px;
+  top: 0px;
+  left: 80px;
+}
+
+.cloud2 {
+  width: 100px;
+  height: 50px;
+  top: 150px;
+  left: -200px;
+  animation-delay: 20s;
+}
+
+.cloud2::before {
+  width: 60px;
+  height: 60px;
+  top: -15px;
+  left: 30px;
+}
+
+.cloud2::after {
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 60px;
+}
+
+.cloud3 {
+  width: 140px;
+  height: 70px;
+  top: 250px;
+  left: -250px;
+  animation-delay: 40s;
+}
+
+.cloud3::before {
+  width: 90px;
+  height: 90px;
+  top: -25px;
+  left: 50px;
+}
+
+.cloud3::after {
+  width: 70px;
+  height: 70px;
+  top: 0;
+  left: 100px;
+}
+
+/* Animate clouds floating across the screen */
+@keyframes cloudMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(200vw); }
+}
+
+.mood-options button {
+  opacity: 0;
+  transform: scale(0.7);
+  animation: moodBtnPopIn 0.5s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+}
+.mood-options button:nth-child(1) { animation-delay: 0.15s; }
+.mood-options button:nth-child(2) { animation-delay: 0.3s; }
+.mood-options button:nth-child(3) { animation-delay: 0.45s; }
+.mood-options button:nth-child(4) { animation-delay: 0.6s; }
+/* Add to App.css or new file */
+

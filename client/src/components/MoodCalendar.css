@@ -1,0 +1,114 @@
+.mood-calendar {
+  background: rgba(255,255,255,0.97);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 340px;
+  max-width: 90vw;
+  margin: 2rem auto;
+  animation: calendarFadeIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes calendarFadeIn {
+  0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+  80% { opacity: 1; transform: translateY(-4px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.calendar-header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.calendar-day-label {
+  text-align: center;
+  font-size: 1rem;
+  color: #888;
+  font-weight: 600;
+  padding-bottom: 0.3rem;
+}
+
+.calendar-day {
+  background: rgba(240,240,240,0.7);
+  border-radius: 12px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.3rem 0.1rem 0.1rem 0.1rem;
+  position: relative;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.calendar-day.empty {
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+}
+
+.calendar-day.today {
+  border: 2px solid #66a6ff;
+  box-shadow: 0 0 0 2px #66a6ff33;
+}
+
+.calendar-day.has-entry {
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border: 2px solid #fffde7;
+}
+
+.calendar-day:hover:not(.empty) {
+  background: #e3f2fd;
+  transform: scale(1.07);
+  z-index: 2;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+}
+
+.calendar-day-number {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.calendar-mood-emoji {
+  margin-top: 0.1rem;
+  font-size: 1.3rem;
+  display: block;
+}
+
+.calendar-intensity {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.1rem;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  padding: 0.1rem 0.5rem;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .mood-calendar {
+    padding: 1rem 0.2rem;
+    min-width: unset;
+  }
+  .calendar-grid {
+    gap: 0.2rem;
+  }
+  .calendar-day {
+    min-height: 38px;
+    font-size: 0.9rem;
+  }
+} 
