@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5050/api",
+  baseURL: "https://mood-diary-g3gd.onrender.com",
   withCredentials: true,
 });
 
