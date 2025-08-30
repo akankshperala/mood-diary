@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5050;
 
 // ✅ Middleware
 app.use(cors({
-  origin: "https://mood-diary-sand.vercel.app/",  // your frontend's address (updated)
+  origin: "*",  // your frontend's address (updated)
   credentials: true                 // allow cookies/auth headers
 }));
 app.use(express.json());
